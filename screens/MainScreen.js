@@ -27,3 +27,5 @@ const styles = StyleSheet.create({
 
 //eksportovanje komponente
 export default MainScreen;
+
+//challenge
