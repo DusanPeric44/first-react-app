@@ -1,6 +1,17 @@
 import React from "react";
 import { Text, StyleSheet, View } from "react-native";
 
+const student = {
+  name: "Darko",
+  hobbies: ["Coding", "Reading"],
+  grades: [
+    {
+      subject: "Math",
+      grade: 9,
+    },
+  ],
+};
+
 const ExcerciseScreen = () => {
   //   Deklaracija varijabli let, const
 
@@ -26,5 +37,5 @@ const styles = StyleSheet.create({
 
 export default ExcerciseScreen;
 
-//Komponenta QuoteScreen prikazuje citat i njegovog autora.
-// Koristiti let i const varijable za citat i autora.
+// NOVI SCREEN - StudentScreen - informacije o studnetu:
+// Ime, Prezime, Datum rodjenja, Broj Indeksa, Lista ocjena, Lista hobija
