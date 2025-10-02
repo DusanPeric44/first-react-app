@@ -13,11 +13,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-          name="Personal Info"
-          component={ListScreen}
-        ></Stack.Screen>
-        <Stack.Screen name="Main" component={MainScreen}></Stack.Screen>
+        <Stack.Screen name="Home" component={ListScreen}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

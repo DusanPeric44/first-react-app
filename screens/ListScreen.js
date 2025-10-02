@@ -1,50 +1,105 @@
 import React from "react";
-import { Text, StyleSheet, FlatList, View } from "react-native";
+import { View, Text, StyleSheet, FlatList } from "react-native";
 
-const naslov = {
-  naslov: "Personal info",
-};
+const ListScreen = () => {
+  // Personal info variables
+  let firstName = "John";
+  let lastName = "Doe";
+  const birthday = "2000-05-15";
 
-const infoStudent = {
-  opis: "Prezime i ime: ",
-  surname: "Perić Emili",
-};
+  // Combine first and last name
+  let fullName = firstName + " " + lastName;
 
-const Studentdate = {
-  opis: "Datum rođenja: ",
-  date: "23.03.2003",
-};
+  // Hobbies array
+  const hobbies = ["Coding", "Reading", "Gaming", "Traveling", "Music"];
 
-const Studentindex = {
-  opis: "Index",
-  nmb: "3265",
-};
+  // Subjects with grades
+  const grades = [
+    { subject: "Math", grade: 9 },
+    { subject: "English", grade: 10 },
+    { subject: "History", grade: 8 },
+    { subject: "Physics", grade: 9 },
+  ];
 
-const Ocjene = [
-  { predmet: "Psihologija", ocjena: "5" },
-  { predmet: "Socijalni Rad", ocjena: "4" },
-  { predmet: "Logika", ocjena: "3" },
-  { predmet: "Socijologija", ocjena: "4" },
-];
-
-const StudentScreen = () => {
   return (
-    <View>
-      <Text>Ocjene:</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Student Info</Text>
+
+      {/* Personal Info */}
+      <Text style={styles.info}>Full Name: {fullName}</Text>
+      <Text style={styles.info}>Birthday: {birthday}</Text>
+
+      {/* Hobbies */}
+      <Text style={styles.subtitle}>My Hobbies:</Text>
       <FlatList
-        data={Ocjene}
-        renderItem={({ item }) => {
-          return (
-            <Text style={styles.ocjeneWrapper}>
-              {item.predmet}: {item.ocjena}
-            </Text>
-          );
-        }}
+        data={hobbies}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => <Text style={styles.hobby}>{item}</Text>}
+      />
+
+      {/* Grades */}
+      <Text style={styles.subtitle}>My Grades:</Text>
+      <FlatList
+        data={grades}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => (
+          <View style={styles.gradeItem}>
+            <Text style={styles.subject}>{item.subject}</Text>
+            <Text style={styles.grade}>{item.grade}</Text>
+          </View>
+        )}
       />
     </View>
   );
 };
 
-const styles = StyleSheet.create({});
+// Styles
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#f9f9f9",
+    padding: 20,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: "bold",
+    marginBottom: 20,
+    textAlign: "center",
+  },
+  info: {
+    fontSize: 18,
+    marginVertical: 5,
+  },
+  subtitle: {
+    fontSize: 22,
+    marginTop: 20,
+    marginBottom: 10,
+    fontWeight: "600",
+  },
+  hobby: {
+    fontSize: 16,
+    padding: 8,
+    backgroundColor: "#e0e0e0",
+    borderRadius: 8,
+    marginVertical: 4,
+  },
+  gradeItem: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#dceefc",
+    padding: 10,
+    borderRadius: 8,
+    marginVertical: 4,
+  },
+  subject: {
+    fontSize: 18,
+    fontWeight: "500",
+  },
+  grade: {
+    fontSize: 18,
+    fontWeight: "700",
+    color: "#1a73e8",
+  },
+});
 
-export default StudentScreen;
+export default ListScreen;
