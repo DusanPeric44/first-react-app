@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList, Button } from "react-native";
 
-const ListScreen = () => {
+const ListScreen = (props) => {
   // Personal info variables
   let firstName = "John";
   let lastName = "Doe";
@@ -49,6 +49,7 @@ const ListScreen = () => {
           </View>
         )}
       />
+      <Button title="Go back" onPress={() => props.navigation.goBack()} />
     </View>
   );
 };
