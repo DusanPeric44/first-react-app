@@ -2,13 +2,18 @@ import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 
 const MenuScreen = (props) => {
-  console.log(props);
   return (
     <View>
       <Text style={styles.text}>Welcome to Menu Screen</Text>
       <Button
+        style={styles.btn}
         title="Go to List Screen"
         onPress={() => props.navigation.navigate("List")}
+      />
+      <Button
+        style={styles.btn}
+        title="Go to Students Screen"
+        onPress={() => props.navigation.navigate("Students")}
       />
     </View>
     // Touchable opacity koji ce voditi na drugi screen
@@ -26,6 +31,9 @@ const styles = StyleSheet.create({
   text: {
     textAlign: "center",
     fontSize: 20,
+    marginVertical: 20,
+  },
+  btn: {
     marginVertical: 20,
   },
 });
