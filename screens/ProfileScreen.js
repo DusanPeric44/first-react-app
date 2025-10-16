@@ -10,7 +10,7 @@ const ProfileScreen = () => {
         fullname="John Doe"
         jobPosition="UI/UX Designer"
         desc="We're passionate about creating beautiful desing for startups & leading brands"
-        image={require("../assets/Avatar-3.png")}
+        image={require("../assets/profile-icon-male-avatar.jpg")}
       />
       <View style={styles.heading}>
         <Text style={styles.text}>PROJECTS</Text>
@@ -19,7 +19,7 @@ const ProfileScreen = () => {
         </TouchableOpacity>
       </View>
       <Project
-        first={require("../assets/Avatar-1.jpeg")}
+        first={require("../assets/o.jpg")}
         second={require("../assets/Avatar-2.png")}
       />
     </View>
