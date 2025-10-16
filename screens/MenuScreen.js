@@ -15,6 +15,11 @@ const MenuScreen = (props) => {
         title="Go to Students Screen"
         onPress={() => props.navigation.navigate("Students")}
       />
+      <Button
+        style={styles.btn}
+        title="Go to Box Screen"
+        onPress={() => props.navigation.navigate("Box")}
+      />
     </View>
     // Touchable opacity koji ce voditi na drugi screen
 
