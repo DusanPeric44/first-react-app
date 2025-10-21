@@ -20,6 +20,11 @@ const MenuScreen = (props) => {
         title="Go to Box Screen"
         onPress={() => props.navigation.navigate("Box")}
       />
+      <Button
+        style={styles.btn}
+        title="Go to Posts Screen"
+        onPress={() => props.navigation.navigate("Posts")}
+      />
     </View>
     // Touchable opacity koji ce voditi na drugi screen
 
@@ -39,7 +44,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   btn: {
-    marginVertical: 20,
+    marginBottom: 20,
   },
 });
 
