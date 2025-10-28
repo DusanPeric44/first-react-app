@@ -10,6 +10,7 @@ import MenuScreen from "./screens/MenuScreen";
 import StudentsScreen from "./screens/StudentsScreen";
 import BoxScreen from "./screens/BoxScreen";
 import PostsScreen from "./screens/PostsScreen";
+import CountriesScreen from "./screens/CountriesScreen";
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,10 @@ export default function App() {
         <Stack.Screen name="Students" component={StudentsScreen}></Stack.Screen>
         <Stack.Screen name="Box" component={BoxScreen}></Stack.Screen>
         <Stack.Screen name="Posts" component={PostsScreen}></Stack.Screen>
+        <Stack.Screen
+          name="Countries"
+          component={CountriesScreen}
+        ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
